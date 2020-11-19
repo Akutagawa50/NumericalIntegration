@@ -31,6 +31,11 @@ double TrapezoidalRule(double x1, double x2, int n, int fn = funcnum){
 
     return dx * sum; 
 }
+
+//シンプソン公式で数値積分する関数
+//x1, x2: 積分範囲 (x1 <= x2)
+// n2   : 積分範囲を等分する数
+// fn   : 関数の番号 funcnumを入れる
 double SimpsonsRule(double x1, double x2, int n2, int fn = funcnum){
     double sum=0.0;         //積分した値
     double dx = 2.0*(x2-x1)/(double)n2;    //dxを計算
