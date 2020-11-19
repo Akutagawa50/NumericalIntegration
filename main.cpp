@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 #include <cmath>
 using namespace std;
 const int funcnum = 0;
@@ -51,17 +52,19 @@ double SimpsonsRule(double x1, double x2, int n2, int fn = funcnum){
 }
 
 int main(){
-    int n=10000;
+    int n=100;
+
+    cin >> n;
     cout << "function number: " << funcnum << endl;
     cout << "when n=" << n << endl;
     switch(funcnum){
         case 0:
-            cout << " trapezoidal rule: " << TrapezoidalRule(0.0, 3.0, n) << endl;
-            cout << " Simpson's rule: " << SimpsonsRule(0.0, 3.0, n) << endl;
+            cout << " trapezoidal rule: " << fixed << setprecision(4) << TrapezoidalRule(0.0, 3.0, n) << endl;
+            cout << " Simpson's rule: " << fixed << setprecision(4) << SimpsonsRule(0.0, 3.0, n) << endl;
             break;
         case 1:
-            cout << " trapezoidal rule: " << TrapezoidalRule(1.0, 2.0, n) << endl;
-            cout << " Simpson's rule: " << SimpsonsRule(1.0, 2.0, n) << endl;
+            cout << " trapezoidal rule: " << fixed << setprecision(4) << TrapezoidalRule(1.0, 2.0, n) << endl;
+            cout << " Simpson's rule: " << fixed << setprecision(4) << SimpsonsRule(1.0, 2.0, n) << endl;
             break;
         
         default:
