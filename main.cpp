@@ -2,7 +2,7 @@
 #include <iomanip>
 #include <cmath>
 using namespace std;
-const int funcnum = 0;
+const int funcnum = 2;
 
 double func(double x, int fn=0){ //数値積分する関数, fnの値を変えると関数が変わる
     switch (fn)
@@ -11,6 +11,8 @@ double func(double x, int fn=0){ //数値積分する関数, fnの値を変え�
         return pow(x, 4) - 2.0*pow(x, 3) +pow(x, 2) - 3.0*x + 1.0;
     case 1:
         return 1.0/x;
+    case 2:
+        return 2*x-2;
     default:
         return 999.999;//error
     }
@@ -65,6 +67,10 @@ int main(){
         case 1:
             cout << " trapezoidal rule: " << fixed << setprecision(4) << TrapezoidalRule(1.0, 2.0, n) << endl;
             cout << " Simpson's rule: " << fixed << setprecision(4) << SimpsonsRule(1.0, 2.0, n) << endl;
+            break;
+        case 2:
+            cout << " trapezoidal rule: " << fixed << setprecision(4) << TrapezoidalRule(-2.0, 2.0, n) << endl;
+            cout << " Simpson's rule: " << fixed << setprecision(4) << SimpsonsRule(-2.0, 2.0, n) << endl;
             break;
         
         default:
